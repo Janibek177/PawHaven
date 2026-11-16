@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="image.png">
+    <title>PawHaven</title>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-pet loader-dog">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=500&q=80" alt="">
+        </div>
+        <div class="loader-pet loader-cat">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500&q=80" alt="">
+        </div>
+        <div class="loader-center">
+            <div class="loader-logo"><i class="fa-solid fa-paw"></i>PawHaven</div>
+            <div class="loader-bar-wrap">
+                <div class="loader-bar"></div>
+            </div>
+            <p class="loader-text">Loading care & love...</p>
+        </div>
+    </div>
+
+    <div id="customAlert" class="custom-alert">
+        <i id="alertIcon" class="fa-solid fa-circle-exclamation"></i>
+        <span id="alertMessage"></span>
+    </div>
+
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-box">
+            <button id="closeModal" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-paw"><i class="fa-solid fa-paw"></i></div>
+                <h2>Contact & Booking</h2>
+                <p>Leave your details and our team will reach out shortly.</p>
+            </div>
+            <form id="contactForm" novalidate>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your name">
+                </div>
+                <div class="input-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="Enter your address">
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 (555) 000-0000">
+                </div>
+                <button type="submit" class="modal-submit">
+                    <span class="submit-paw"><i class="fa-solid fa-paw"></i></span>
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-box">
+            <button id="closePaymentModal" class="modal-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-paw"><i class="fa-solid fa-credit-card"></i></div>
+                <h2 id="paymentPlanTitle">Complete Payment</h2>
+                <p id="paymentPlanSubtitle">Enter your card details to activate your plan.</p>
+            </div>
+            <form id="paymentForm" novalidate>
+                <div class="input-group">
+                    <label for="payUsername">Username</label>
+                    <input type="text" id="payUsername" placeholder="Cardholder name">
+                </div>
+                <div class="input-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" maxlength="19" placeholder="0000 0000 0000 0000">
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="cardDate">Date</label>
+                        <input type="text" id="cardDate" maxlength="5" placeholder="MM/YY">
+                    </div>
+                    <div class="input-group">
+                        <label for="cardCvc">CVC</label>
+                        <input type="password" id="cardCvc" maxlength="3" placeholder="123">
+                    </div>
+                </div>
+                <button type="submit" class="modal-submit">
+                    <span class="submit-paw"><i class="fa-solid fa-paw"></i></span>
+                    Pay Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <header id="home">
+        <nav class="links">
+            <div class="link">
+                <a href="#home" class="mainname"><i class="fa-solid fa-paw"></i>PawHaven</a>
+                <ul id="navMenu">
+                    <li>
+                        <a href="#home" class="active"><i class="fa-solid fa-house"></i>Home</a>
+                    </li>
+                    <li>
+                        <a href="#about"><i class="fa-solid fa-users-gear"></i>About Us</a>
+                    </li>
+                    <li>
+                        <a href="#pricing"><i class="fa-solid fa-user-tag"></i>Our Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#services"><i class="fa-solid fa-cube"></i>Our Services</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="open-contact"><i class="fa-solid fa-envelope"></i>Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="button">
+                    <button class="open-contact"><div class="paw"><i class="fa-solid fa-paw"></i></div>Book An Appointment</button>
+                </div>
+                <button id="burgerBtn" class="burger-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </nav>
+
+        <div class="home">
+            <i class="fa-solid fa-paw paw-left"></i>
+            <i class="fa-solid fa-paw paw-right"></i>
+
+            <h1 class="home-text">Love, Care, And Everything Pets <br>Need</h1>
+            <p class="home-desc">At PawHaven, we believe pets deserve nothing but the best. From grooming and boarding to health checkups and <br>
+            training, our dedicated team provides comprehensive care with a personal touch.</p>
+            <button class="open-contact"><div class="paw2"><i class="fa-solid fa-paw"></i></div>Get Started</button>
+        </div>
+
+        <div class="dogs-container">
+            <img src="dogs.png" alt="Cute Dogs">
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="about">
+                <div class="about-left">
+                    <div class="about-main">
+                        <p>About Us</p>
+                    </div>
+
+                    <div class="about-text">
+                        <h1>Our Passion Is Caring For Your <br>Pets Like Family</h1>
+                        <p class="about-desc">At PawHaven, we believe every pet deserves love, care, and attention.
+                        Our dedicated team is passionate about providing personalized care
+                        that makes your furry friends feel right at home. From grooming and
+                        health checkups to specialized services, we treat every pet as if they
+                        were our own, ensuring they are happy, healthy, and well cared for.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="feature-info">
+                                    <h3>Personalized Care</h3>
+                                    <p>We tailor our services to meet the unique needs of every pet
+                                    ensuring they receive the best care possible.</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fa-solid fa-users-viewfinder"></i>
+                                </div>
+                                <div class="feature-info">
+                                    <h3>Experienced Team</h3>
+                                    <p>Our team of skilled professionals is passionate about pets,
+                                    providing expert care and attention to keep them healthy and
+                                    happy.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-img">
+                    <img src="about-img.png" alt="About PawHaven">
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="services">
+                <div class="services-top">
+                    <div class="services-header">
+                        <div class="services-badge">
+                            <p>Our Services</p>
+                        </div>
+                        <h1>Our Range Of Services: Caring For Pets, <br>One Paw At A Time</h1>
+                        <p class="services-desc">At PawHaven, we offer a diverse range of services designed to meet every need of <br>your beloved pets.</p>
+                    </div>
+                    <button id="moreServicesBtn" class="more-services-btn">
+                        <div class="plus-icon"><i class="fa-solid fa-plus"></i></div>
+                        More Services
+                    </button>
+                </div>
+
+                <div class="services-grid-top">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+                        <h3>Grooming</h3>
+                        <p>We keep your pets looking great with baths, haircuts, and nail trims, all done with gentle care and high-quality products.</p>
+                        <div class="service-img">
+                            <img src="ser1.png" alt="Grooming">
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
+                        <h3>Checkup</h3>
+                        <p>Our regular checkups ensure your pet's health is on track, with vaccinations, and personalized advice.</p>
+                        <div class="service-img">
+                            <img src="ser2.png" alt="Checkup">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-grid-bottom">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-tooth"></i></div>
+                        <h3>Dental Care</h3>
+                        <p>Maintain your pet's oral health with professional teeth cleaning and tartar removal.</p>
+                        <div class="service-img">
+                            <img src="ser3.png" alt="Dental Care">
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-dog"></i></div>
+                        <h3>Dog Walking</h3>
+                        <p>Give your dog the exercise they need with our personalized walking services, providing physical activity and mental stimulation.</p>
+                        <div class="service-img">
+                            <img src="ser4.png" alt="Dog Walking">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="testimonials-container">
+                <div class="testimonials-header">
+                    <div class="testimonials-badge">
+                        <p>Testimonials</p>
+                    </div>
+                    <h1>Real Stories From Happy Pet Owners</h1>
+                    <p class="testimonials-subtitle">Discover what makes PawHaven the trusted choice for pet care.</p>
+                </div>
+
+                <div class="testimonials-content">
+                    <div class="testimonial-photo">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80" alt="Happy Pet Owner">
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Sarah M">
+                            <div>
+                                <h4>Sarah M</h4>
+                                <span>Grooming Service</span>
+                            </div>
+                        </div>
+                        <p>I've never seen my dog look so good! The grooming team at PawHaven took such great care of Tiranoia. She came home looking and feeling amazing. I can't recommend PawHaven enough for pet care services</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Emily R">
+                            <div>
+                                <h4>Emily R</h4>
+                                <span>Overnight Care</span>
+                            </div>
+                        </div>
+                        <p>Leaving my cat, Luna, overnight used to make me nervous, but PawHaven changed that. They treated her like royalty! I felt completely at ease knowing she was in good hands, and she came back happy and relaxed.</p>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <h2>500+</h2>
+                        <p>Happy Pets Cared For</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>300+</h2>
+                        <p>Successful Sessions</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>100+</h2>
+                        <p>Overnight Stays Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h2>5+</h2>
+                        <p>Years of Experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-bottom">
+                <div class="cat-box">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500&q=80" alt="Cat" class="cat-img">
+                    <i class="fa-solid fa-paw paw-deco-left"></i>
+                    <div class="google-review-card">
+                        <div class="review-title">
+                            <i class="fa-solid fa-star"></i>
+                            <span>5 Stars Review On Google</span>
+                        </div>
+                        <div class="review-avatars">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80" alt="">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="">
+                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=100&q=80" alt="">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dog-box">
+                    <i class="fa-solid fa-paw paw-deco-right"></i>
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=500&q=80" alt="Dog" class="dog-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="care-banners">
+            <div class="care-container">
+                <div class="care-card care-dog">
+                    <div class="care-glass">
+                        <span class="care-badge">Care For Dogs</span>
+                        <h2>Dogs Need Love Too!</h2>
+                        <p>While our Doberman might steal the spotlight, our love and care extend to all pets, including your canine friends. From grooming to specialized health care, we provide everything your dog needs to thrive. Book a service today and pamper your dog with the attention they deserve!</p>
+                        <button class="care-btn open-contact">
+                            <span class="care-paw"><i class="fa-solid fa-paw"></i></span>
+                            Book Dog Care Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="care-card care-cat">
+                    <div class="care-glass">
+                        <span class="care-badge">Care For Cats</span>
+                        <h2>Cats Need Love Too!</h2>
+                        <p>Whether your feline friend loves quiet naps or playful afternoons, our specialized cat care ensures they feel safe, pampered, and relaxed. From gentle grooming to cozy overnight stays, book a service today and give your cat the royal treatment!</p>
+                        <button class="care-btn open-contact">
+                            <span class="care-paw"><i class="fa-solid fa-paw"></i></span>
+                            Book Cat Care Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing">
+            <div class="pricing-container">
+                <div class="pricing-header">
+                    <h1>Affordable Care For Your Beloved Pets</h1>
+                    <p>Our affordable pricing ensures your furry friends receive the love, attention, and <br>professional care they deserve—without breaking the bank.</p>
+                    <div class="pricing-toggle">
+                        <button class="toggle-btn active" data-plan="small">Small pets</button>
+                        <button class="toggle-btn" data-plan="large">Large pets</button>
+                    </div>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-icon"><i class="fa-solid fa-crown"></i></div>
+                        <h3>Basic Care Plan</h3>
+                        <p class="plan-desc">Perfect for routine services, the Basic Care Plan covers essential pet care needs to keep your pet looking and feeling great.</p>
+                        <div class="plan-price">
+                            <span class="price-val" data-small="$50" data-large="$70">$50</span>
+                            <span class="price-period">/per month</span>
+                        </div>
+                        <button class="plan-btn outline open-payment" data-plan-title="Basic Care Plan">
+                            <i class="fa-regular fa-pen-to-square"></i> Get Started
+                        </button>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Grooming Session (1x per month)</li>
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Basic Health Checkup (2x per year)</li>
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Nail Trimming & Ear Cleaning</li>
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Dog Walking (1x per week)</li>
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Dental Care (1x per year)</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="pricing-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <h3>Comprehensive Care Plan</h3>
+                        <p class="plan-desc">For owners seeking regular, ongoing care, the Comprehensive Care Plan offers an excellent balance of essential and additional services.</p>
+                        <div class="plan-price">
+                            <span class="price-val" data-small="$90" data-large="$120">$90</span>
+                            <span class="price-period">/per month</span>
+                        </div>
+                        <button class="plan-btn outline open-payment" data-plan-title="Comprehensive Care Plan">
+                            <i class="fa-regular fa-pen-to-square"></i> Get Started
+                        </button>
+                        <ul class="plan-features">
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Grooming Session (2x per month)</li>
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Monthly Health Checkup</li>
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Nail Trimming & Ear Cleaning</li>
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Dog Walking (3x per week)</li>
+                            <li><i class="fa-solid fa-circle-chevron-right"></i> Dental Care (3x per year)</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-right-col">
+                        <div class="pricing-info-box">
+                            <p>We understand that every pet has different needs. That's why we provide flexible pricing plans to suit pets of all ages, sizes, and temperaments.</p>
+                        </div>
+
+                        <div class="pricing-card custom-card">
+                            <div class="pricing-icon"><i class="fa-solid fa-paw"></i></div>
+                            <h3>Custom Plan</h3>
+                            <p class="plan-desc">At PawHaven , we understand that every pet is unique, and so are their needs. With our Custom Plan, you can tailor a package that fits your pet's specific requirements. From grooming to specialized health services, you choose what works best for your furry friend.</p>
+                            <button class="plan-btn solid open-payment" data-plan-title="Custom Plan">
+                                <i class="fa-regular fa-pen-to-square"></i> Get Started
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-deco-left">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=500&q=80" alt="">
+        </div>
+
+        <div class="footer-deco-right">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=500&q=80" alt="">
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-top">
+                <a href="#home" class="footer-logo"><i class="fa-solid fa-paw"></i>PawHaven</a>
+                <p class="footer-desc">At PawHaven, we provide expert, compassionate care to ensure your pets are <br>happy, healthy, and loved.</p>
+                <button class="footer-btn open-contact">
+                    <span class="footer-paw"><i class="fa-solid fa-paw"></i></span>
+                    Get An Appointment
+                </button>
+            </div>
+
+            <div class="footer-middle">
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-paw"></i> Company</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact" class="open-contact">Contact Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-paw"></i> Follow Us</h4>
+                    <ul>
+                        <li><a href="https://www.instagram.com/">Instagram</a></li>
+                        <li><a href="https://www.whatsapp.com/">WhatsApp</a></li>
+                        <li><a href="https://www.facebook.com/">Facebook</a></li>
+                        <li><a href="https://uz.linkedin.com/">LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4><i class="fa-solid fa-paw"></i> Contact Us</h4>
+                    <ul class="contact-list">
+                        <li><i class="fa-regular fa-envelope"></i> info@pawhaven.com</li>
+                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fa-solid fa-location-dot"></i> 1234 Furry Friends Avenue <br>Petville, PA 19000</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>2024 - All rights are reserved for PawHaven. Design & Developed By Rokin</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
